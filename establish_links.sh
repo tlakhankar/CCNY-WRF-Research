@@ -8,5 +8,5 @@ fi
 
 for i in $(seq -f "%03g" $1 $2)
 do 
-	ln -s "~/Jean\ Data/$3/*.f$i" "~/Jean\ Data/regrid/input_files/"
+	ln -s "~/Jean\ Data/$3/gfs.t00z.pgrb2.$3.f$i" "/home/docker/Jean Data/regrid/input_files"
 done
