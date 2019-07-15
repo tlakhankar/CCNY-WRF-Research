@@ -4,9 +4,10 @@
 if [ "$#" -ne 3 ]; then
 	echo "3 parameters must exist"
 	echo "USAGE: ./establish_links.sh [START] [END] [PRESSURE LEVEL]"
+	exit 1
 fi
 
 for i in $(seq -f "%03g" $1 $2)
 do 
-	ln -s "~/Jean\ Data/$3/gfs.t00z.pgrb2.$3.f$i" "/home/docker/Jean Data/regrid/input_files"
+	cp -as $HOME/Jean\ Data/$3/gfs.t00z.pgrb2.$3.f$i $HOME/Jean\ Data/regrid/input_files/
 done
