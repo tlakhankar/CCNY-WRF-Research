@@ -1,2 +1,2 @@
 ## Located in SIMULATION directory, used to clean directory to get rid of external files
-rm *.LDASIN_DOMAIN1 *.LDASIN_DOMAIN1.nc GFS2WRFHydro_weight_bilinear.nc  SCRIP_WRFHydro_bilinear.nc  PET0.RegridWeightGen.Log SCRIP_GFS_bilinear.nc 
+rm *CHRTOUT_DOMAIN1 *.CHANOBS_DOMAIN1 *.LDASOUT_DOMAIN1 *.RTOUT_DOMAIN1 frxst_pts_out.txt  diag_hydro.00001 diag_hydro.00000 RESTART.*_DOMAIN1
