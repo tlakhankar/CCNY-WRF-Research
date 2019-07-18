@@ -7,6 +7,14 @@ This will be used to keep track of our issues for research under Dr. Tarendra La
 - Arik Iridisy 
 - Kendall Molas
 
+## Downloading GFS Data
+
+```
+wget -r -l1 --no-parent -nc -nd -A "gfs.t00z.pgrb2.0p25.f*" -R "*.idx" [URL] -P /path/to/folder
+```
+
+If -P is included in script, files will be downloaded directly to the specific folder.
+
 ## Current Scripts Available
 
 * cleanFiles.sh: This script is located in the regrid directory, and cleans the regridding directory of files: 
