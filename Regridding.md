@@ -33,7 +33,7 @@ Currently, the only usable forcing data is: GFS\*. A google sheet is provided [h
 
 ## Interpolation Methods
 
-In the regridding scripts there are two available types of interpolation methods: bilinear and conserve. By default, the regrid script uses bilinear for the interpolation method. It utilizes bilinear by default as it is easy to use and applies to when the source and destination are rectlinear. For more information on the interpolation methods, ucar provides more details [here](https://climatedataguide.ucar.edu/climate-data-tools-and-analysis/regridding-overview).
+In the regridding scripts there are two available types of interpolation methods: bilinear and conserve. By default, the regrid script uses bilinear for the interpolation method. It utilizes bilinear by default as it is easy to use and applies to when the source and destination are rectlinear. For more information on the interpolation methods, UCAR provides more details [here](https://climatedataguide.ucar.edu/climate-data-tools-and-analysis/regridding-overview).
 
 ## Using Regridding Scripts
 
@@ -59,7 +59,7 @@ If interpolation method wants to be changed, it can be changed to "conserve".
 After weights are generated, regridding is now possible. Execute the following command:
 
 ```
-ncl 'srcFileName="gfsanl_4\*.grb2"' 'dstGridName="geo_em.d01.nc"' GFS2WRFHydro_regrid.ncl
+ncl 'srcFileName="gfsanl_4*.grb2"' 'dstGridName="geo_em.d01.nc"' GFS2WRFHydro_regrid.ncl
 ```
 
 If the interpolation method is changed to conserve, an option must be changed in the [FORCING]\_regrid.ncl file. Uncomment wgtFileName_conserve and comment out wgtFileName_bilinear.
