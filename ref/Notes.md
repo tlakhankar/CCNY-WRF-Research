@@ -15,6 +15,7 @@ Dependent variables in hydro.namelist:
 
 - out_dt\*      : Based on model cycle or interval of forecast hour
 
+To plot the discharge rate enable the frxst_pts_out variable in hydro.namelist.
 
 \* These must be the same. If FORCING_TIMESTEP = 3600, then out_dt must be 60. (in minutes)
 
