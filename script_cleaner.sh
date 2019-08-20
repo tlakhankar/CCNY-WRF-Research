@@ -1,5 +1,12 @@
 ## /bin/bash
 
+###############################################################
+# Add this to aliases and name it to allow easy usage such as sc.
+# Example:
+    # sc [DIROPT][OPTIONS]
+###############################################################
+
+
 ## Created by Kendall Molas for the WRF-Hydro Team at CCNY.
 ## This is a script cleaning tool that allows the ability to make easy changes to a directory
 
@@ -98,7 +105,7 @@ elif [ $1 -eq 1 ]; then
     exit 1
   fi
 
-# For Simulation directory
+# Simulation directory chosen
 elif [ $1 -eq 2 ]; then
   if [ $2 = "clean" ]; then
     printf "Removing the following files: *CHRTOUT_DOMAIN1 *.CHANOBS_DOMAIN1 *.LDASOUT_DOMAIN1 *.RTOUT_DOMAIN1 frxst_pts_out.txt  diag_hydro.00001 diag_hydro.00000 RESTART.*_DOMAIN1\n"
