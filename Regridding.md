@@ -97,6 +97,14 @@ ncl 'srcFileName="gfsanl_4*.grb2"' 'dstGridName="geo_em.d01.nc"' GFS2WRFHydro_re
 
 If the interpolation method is changed to conserve, an option must be changed in the [FORCING]\_regrid.ncl file. Uncomment wgtFileName_conserve and comment out wgtFileName_bilinear.
 
+After regridding the output files will be outputted with the following naming convention: `YYYYMMDDHH.LDASIN_DOMAINX`
+
+These output files may or may not be moved automatically to the output_files directory. If files are not moved automatically, execute the following command in the same directory.
+
+```
+mv *.DOMAINX output_files
+```
+
 ## Issues
 
 We have experienced issues using the intentional GFS forcing data which utilizes forecasting hours. Look at the issues tab for more details.
