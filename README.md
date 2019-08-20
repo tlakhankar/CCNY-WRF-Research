@@ -2,11 +2,12 @@
 
 This will be used to keep track of our issues for research under Dr. Tarendra Lakhankar at CCNY.
 
-## Members:
+## Current Team:
 
 - Arik Iridisy
 - Kendall Molas
--
+- Engela Sthapit
+
 
 
 ## Overview
@@ -30,3 +31,7 @@ More about Docker can be found [here](https://docs.docker.com/get-started/)
 ## [Regridding](https://github.com/WK-M/CCNY-WRF-Research/blob/master/Regridding.md)
 
 Regridding is the process of interpolating from one grid resolution to a different grid resolution. With regridding, it utilizes the geo_em.dXX.nc file made in Step 1, and regrids the data to the specified domain. Where XX is a number such as 00, 01, etc.  NCAR provides regridding scripts that are available to the public and downloadable on their [website](https://ral.ucar.edu/projects/wrf_hydro/regridding-scripts). They provide regridding scripts for 6 different forcing datasets: NLDAS, GLDAS, HRRR, MRMS, GFS, and RAP.
+
+
+
+## Past Team Members
