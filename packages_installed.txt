@@ -1,0 +1,22 @@
+##########################################################################
+If docker is chosen to be removed from this project, the following packages
+must be installed on Ubuntu 18.10.
+##########################################################################
+
+libnetcdf-dev/bionic,now 1:4.6.0-2build1 amd64 [installed]
+libnetcdf13/bionic,now 1:4.6.0-2build1 amd64 [installed]
+libnetcdff-dbg/bionic,now 4.4.4+ds-3 amd64 [installed]
+libnetcdff-dev/bionic,now 4.4.4+ds-3 amd64 [installed]
+libnetcdff6/bionic,now 4.4.4+ds-3 amd64 [installed]
+libpnetcdf-dev/bionic,now 1.9.0-2 amd64 [installed]
+libpnetcdf0d/bionic,now 1.9.0-2 amd64 [installed,automatic]
+netcdf-bin/bionic,now 1:4.6.0-2build1 amd64 [installed]
+pnetcdf-bin/bionic,now 1.9.0-2 amd64 [installed]
+libopenmpi-dev/bionic,now 2.1.1-8 amd64 [installed]
+libopenmpi2/bionic,now 2.1.1-8 amd64 [installed]
+openmpi-bin/bionic,now 2.1.1-8 amd64 [installed]
+openmpi-common/bionic,bionic,now 2.1.1-8 all [installed]
+
+
+These packages were installed and tested on a separate VM (Virtual Machine)
+and showed to be working for being able to create the wrfhydro.exe.
