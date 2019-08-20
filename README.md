@@ -18,7 +18,7 @@ These issues form the build blocks for _Projects_. Projects are a way to organiz
 
 
 
-## Docker
+## [Docker](https://github.com/WK-M/CCNY-WRF-Research/blob/master/Docker.md)
 
 An underlying technology for this entire project is Docker. Docker is a containerization/sandboxing program that allows multiple Linux boxes to be instantiated on one computer. The primary reason we are using Docker is because NCAR/UCAR has produced a Docker Image which has WRF-HYDRO and all its dependencies prebuilt. Docker also operates as our version management/back up system. The main thing that needs to be understood about Docker are Images and Containers.
 
@@ -27,6 +27,6 @@ An underlying technology for this entire project is Docker. Docker is a containe
 More about Docker can be found [here](https://docs.docker.com/get-started/)
 
 
-## Regridding
+## [Regridding](https://github.com/WK-M/CCNY-WRF-Research/blob/master/Regridding.md)
 
 Regridding is the process of interpolating from one grid resolution to a different grid resolution. With regridding, it utilizes the geo_em.dXX.nc file made in Step 1, and regrids the data to the specified domain. Where XX is a number such as 00, 01, etc.  NCAR provides regridding scripts that are available to the public and downloadable on their [website](https://ral.ucar.edu/projects/wrf_hydro/regridding-scripts). They provide regridding scripts for 6 different forcing datasets: NLDAS, GLDAS, HRRR, MRMS, GFS, and RAP.
