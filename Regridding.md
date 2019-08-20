@@ -31,6 +31,39 @@ Currently, the only usable forcing data is: GFS\*. A google sheet is provided [h
 
 \* GFSANL https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs
 
+### Example of Downloading GFSANL
+
+1) Navigate to the NOAA Website with GFS data:
+
+> https://nomads.ncdc.noaa.gov/data/gfsanl/
+
+2) Navigate to the Year and Month: YYYYMM/YYMMDD such as 201905/20190519
+
+3) Copy the URL link and use wget to download the files from copied URL. Such as https://nomads.ncdc.noaa.gov/data/gfsanl/201905/20190503/
+
+```
+wget -r -e robots=off -l1 --no-parent -nc -nd -A "gfsanl_4*006.grb2" https://nomads.ncdc.noaa.gov/data/gfsanl/201905/20190503/
+```
+
+4) To make download multiple files from different directories create a txt file with a .dat extension.
+
+Example:
+> touch myfile.dat
+
+5) The URLs of the forcing data are very similar to one another.
+
+> https://nomads.ncdc.noaa.gov/data/gfsanl/201905/20190503/
+> https://nomads.ncdc.noaa.gov/data/gfsanl/201905/20190504/
+> ...
+
+6) Place these URLs in myfile.dat
+
+7) Run the following command:
+
+```
+wget -r -e robots=off -l1 --no-parent -nc -nd -A "gfsanl_4*006.grb2" --content-disposition -i myfile.dat
+```
+
 ## Interpolation Methods
 
 In the regridding scripts there are two available types of interpolation methods: bilinear and conserve. By default, the regrid script uses bilinear for the interpolation method. It utilizes bilinear by default as it is easy to use and applies to when the source and destination are rectlinear. For more information on the interpolation methods, UCAR provides more details [here](https://climatedataguide.ucar.edu/climate-data-tools-and-analysis/regridding-overview).
