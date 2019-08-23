@@ -4,8 +4,6 @@ This will be used to keep track of our issues for research under Dr. Tarendra La
 
 ## Current Team:
 
-- Arik Iridisy
-- Kendall Molas
 - Engela Sthapit
 
 
@@ -35,3 +33,5 @@ Regridding is the process of interpolating from one grid resolution to a differe
 
 
 ## Past Team Members
+- Arik Iridisy
+- Kendall Molas
