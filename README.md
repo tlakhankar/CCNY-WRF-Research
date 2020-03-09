@@ -5,6 +5,10 @@ This will be used to keep track of our issues for research under Dr. Tarendra La
 ## Current Team:
 
 - Engela Sthapit
+- Anthony Bravo
+- Arik Idrisy
+- Abtahi Chowdry
+- Rehman Arshad
 
 
 
@@ -15,7 +19,11 @@ The GitHub repository has two functions. One is to hold any scripts written to e
 
 These issues form the build blocks for _Projects_. Projects are a way to organize issues using a Trello Board like system. By default there are 3 columns, _Todo, In Progress, Completed_ however more can be added or removed at your convenience. The issues can be moved across columns using the GUI under the Projects tab. _One issue can be a part of multiple projects_, i.e. Issue #4 can be a card in both Project A and Project B.
 
-
+## Important File Paths
+Location of this repo clones on Anthony's Office Computer
+`
+ /home/engela/Desktop/ARIK_NO_TOUCHY/CCNY_WRF_RESEARCH
+`
 
 ## [Docker](https://github.com/WK-M/CCNY-WRF-Research/wiki/Docker)
 
@@ -32,6 +40,3 @@ Regridding is the process of interpolating from one grid resolution to a differe
 
 
 
-## Past Team Members
-- Arik Iridisy
-- Kendall Molas
