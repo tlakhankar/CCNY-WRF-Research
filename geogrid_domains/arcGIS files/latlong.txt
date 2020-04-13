@@ -1,0 +1,11 @@
+old:
+	e_we=30
+	e_sn=20
+	ref_lat=18.38
+	ref_lon=-67.08
+
+new:
+	e_we=160
+	e_sn=60
+	ref_lat=18.226055
+	ref_lon=-66.473615

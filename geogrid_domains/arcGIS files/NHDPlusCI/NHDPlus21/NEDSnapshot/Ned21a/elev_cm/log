@@ -1,0 +1,2 @@
+201411121349   0    14     0rmoore INT21A2 = con ( int21a < 0 , 0, int21a )
+201411121350   0     1     0rmoore COPY int21a2 E:\PUERTORICO\NHDPLUS21\NEDSNAPSHOT\NED21A\elev_cm
