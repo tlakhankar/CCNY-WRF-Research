@@ -2,6 +2,14 @@
 
 This will be used to keep track of our issues for research under Dr. Tarendra Lakhankar at CCNY.
 
+## May 22nd Sprint Objectives
+
+- 2 Watersheds Discharge Graphs
+   - Watershed E
+   - Watershed F
+- Compare discharge from precip
+   - Satallite Precip comparison perferbly GOES-R
+
 ## Current Team:
 
 - Engela Sthapit
@@ -9,8 +17,6 @@ This will be used to keep track of our issues for research under Dr. Tarendra La
 - Arik Idrisy
 - Abtahi Chowdry
 - Rehman Arshad
-
-
 
 ## Overview
 This Readme contains an explanation of how to use this GitHub repository and operates as a table of contents for all the documentation written for this project.
