@@ -1,0 +1,117 @@
+Begining processing on Fri May 29 13:37:25 2020
+64-bit: False
+Input parameters:
+    Parameter: Input GEOGRID File: C:\Users\Abtahi.Chowdhury49\Desktop\abtahi_arcgis\geo_em.d01.nc
+    Parameter: Forecast Points (CSV): C:\Users\Abtahi.Chowdhury49\Desktop\abtahi_arcgis\pr_frxst_pts_csv.csv
+    Parameter: Mask CHANNELGRID variable to forecast basins?: true
+    Parameter: Create reach-based routing (RouteLink) files?: true
+    Parameter: Create lake parameter (LAKEPARM) file?: false
+    Parameter: Reservoirs Shapefile or Feature Class: None
+    Parameter: Input Elevation Raster: C:\Users\Abtahi.Chowdhury49\Desktop\abtahi_arcgis\data\elevpri0100a.tif
+    Parameter: Regridding (nest) Factor: 10
+    Parameter: Number of routing grid cells to define stream: 200
+    Parameter: OVROUGHRTFAC Value: 1
+    Parameter: RETDEPRTFAC Value: 1
+    Parameter: Output ZIP File: C:\Users\Abtahi.Chowdhury49\Desktop\abtahi_arcgis\gis_output.zip
+None
+Step 1: NetCDF Conversion initiated...
+    Map Projection: Mercator
+    Using MOAD_CEN_LAT for latitude of origin.
+    Step 1 completed without error.
+  New grid spacing: dx=100.0, dy=100.0
+  New dimensions: rows=290, cols=440
+    The GEOGRID File resolution is 1000.0sm
+    Proj4: +proj=merc +units=meters +a=6370000.0 +b=6370000.0 +lon_0=-66.6389 +lat_ts=18.0
+    GeoTransform: -21998.8468839 1000.0 0 1975499.50937 0 -1000.0
+    Created projection definition from input NetCDF GEOGRID file.
+Creating CF-netCDF File.
+    Esri PE String: PROJCS["Sphere_Mercator",GEOGCS["GCS_Sphere",DATUM["D_Sphere",SPHEROID["Sphere",6370000.0,0.0]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Mercator"],PARAMETER["False_Easting",0.0],PARAMETER["False_Northing",0.0],PARAMETER["Central_Meridian",-66.6389],PARAMETER["Standard_Parallel_1",18.0],UNIT["Meter",1.0]]
+    Map Projection of input raster : mercator
+    Dimensions created after  0.01 seconds.
+    Starting Process: Building to XMap/YMap
+    Conversion of input raster to XMap/YMap completed without error.
+    Coordinate variables and variable attributes set after  0.02 seconds.
+    netCDF global attributes set after  0.02 seconds.
+Step 2 initiated...
+    The GEOGRID File resolution is 1000.0sm
+    The High-resolution dataset will be 100.0m
+    MakeRasterLayer process completed without error.
+    The coarse grid has 29 rows and 44 columns.
+    The input elevation grid (before reprojection) has 289 rows and 442 columns.
+    Projecting input elevation data to WRF coordinate system.
+    ArcGIS version 10.7 found. Using Custom Geotransformation (GeoTransform_Null_WRFHydro)
+    Finished projecting input elevation data to WRF coordinate system.
+    The fine grid (before ExtractByMask) has 301 rows and 451 columns.
+    Fine Grid has 290 rows and 440 columns.
+    Step 2 completed without error.
+    Deriving geocentric coordinates on routing grid from bilinear interpolation of geogrid coordinates.
+Creating CF-netCDF File.
+    Esri PE String: PROJCS["Sphere_Mercator",GEOGCS["GCS_Sphere",DATUM["D_Sphere",SPHEROID["Sphere",6370000.0,0.0]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Mercator"],PARAMETER["False_Easting",0.0],PARAMETER["False_Northing",0.0],PARAMETER["Central_Meridian",-66.6389],PARAMETER["Standard_Parallel_1",18.0],UNIT["Meter",1.0]]
+    Map Projection of input raster : mercator
+    Dimensions created after  0.00 seconds.
+    Starting Process: Building to XMap/YMap
+    Conversion of input raster to XMap/YMap completed without error.
+    Coordinate variables and variable attributes set after  0.03 seconds.
+    Proceeding to add LATITUDE and LONGITUDE variables after  0.03 seconds.
+    Variables populated after  0.04 seconds.
+    Process completed without error.
+    LATITUDE and LONGITUDE variables and variable attributes set after  0.04 seconds.
+    netCDF global attributes set after  0.04 seconds.
+    Process: landuse written to output netCDF.
+Step 4 initiated...
+    Channelgrid will be masked to basins.
+    Reach-based routing files will be created.
+    Process: FLOWDIRECTION written to output netCDF.
+    Process: FLOWACC written to output netCDF.
+    Process: TOPOGRAPHY written to output netCDF.
+    Process: RETDEPRTFAC written to output netCDF.
+    Process: OVROUGHRTFAC written to output netCDF.
+    Process: LKSATFAC written to output netCDF.
+    Process: STREAMORDER written to output netCDF.
+    Forecast points provided and basins being delineated.
+    Process: frxst_pts written to output netCDF.
+    Process: basn_msk written to output netCDF.
+    Routing table will be created...
+        Stream to features step complete.
+        Adding forecast points:LINKID association.
+        Found 1 forecast point:LINKID associations.
+        Done reading streams layer.
+        Done building Nodes layer with adjustments.
+        Done extracting elevations to points.
+        Done reading node elevations.
+        Done reading Strahler stream orders.
+        Time elapsed for sorting: 0.00s
+        Starting to fill in routing table NC file.
+        Done writing NC file to disk.
+    Routing table created without error.
+    Adding parameters from Route_Link.nc to streams.shp.
+    Wrote paramters to feature class: 0.21 seconds.
+    Process: LINKID written to output netCDF.
+    Process: LAKEGRID written to output netCDF.
+    Process: CHANNELGRID written to output netCDF.
+    Step 4 completed without error.
+Beginning to build 2D groundwater basin inputs
+  Building groundwater inputs using FullDom LINKID local basins
+    LINKID exists in FullDom file.
+    Stream to features step complete.
+Finished building groundwater basin grids in 2.08 seconds
+Beginning to build groundwater inputs
+    Found (283,) basins in the watershed grid
+    Found 268 basins (potentially including nodata values) in the file after resampling to the coarse grid.
+Creating CF-netCDF File.
+    Esri PE String: PROJCS["Sphere_Mercator",GEOGCS["GCS_Sphere",DATUM["D_Sphere",SPHEROID["Sphere",6370000.0,0.0]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Mercator"],PARAMETER["False_Easting",0.0],PARAMETER["False_Northing",0.0],PARAMETER["Central_Meridian",-66.6389],PARAMETER["Standard_Parallel_1",18.0],UNIT["Meter",1.0]]
+    Map Projection of input raster : mercator
+    Dimensions created after  0.00 seconds.
+    Starting Process: Building to XMap/YMap
+    Conversion of input raster to XMap/YMap completed without error.
+    Coordinate variables and variable attributes set after  0.01 seconds.
+    netCDF global attributes set after  0.01 seconds.
+    NC dimensions: 29, 44
+    GWBUCKS array dimensions: 29, 44
+    Process: C:\Users\Abtahi.Chowdhury49\Desktop\abtahi_arcgis\scratchdir\GWBASINS.nc completed without error
+    Finished building groundwater grid file in 0.03 seconds
+    Calculating size and ID parameters for basin polygons.
+    Created output bucket parameter table (.nc): C:\Users\Abtahi.Chowdhury49\Desktop\abtahi_arcgis\scratchdir\GWBUCKPARM.nc.
+  Finished building groundwater bucket parameter table in 0.01 seconds.
+Finished building groundwater parameter files in 10.23 seconds
+Completed without error in 60.5260000229 seconds.
