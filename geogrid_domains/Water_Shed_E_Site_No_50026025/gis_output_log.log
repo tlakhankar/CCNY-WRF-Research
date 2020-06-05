@@ -1,4 +1,4 @@
-Begining processing on Fri May 29 13:37:25 2020
+Begining processing on Fri Jun  5 13:08:05 2020
 64-bit: False
 Input parameters:
     Parameter: Input GEOGRID File: C:\Users\Abtahi.Chowdhury49\Desktop\abtahi_arcgis\geo_em.d01.nc
@@ -30,8 +30,8 @@ Creating CF-netCDF File.
     Dimensions created after  0.01 seconds.
     Starting Process: Building to XMap/YMap
     Conversion of input raster to XMap/YMap completed without error.
-    Coordinate variables and variable attributes set after  0.02 seconds.
-    netCDF global attributes set after  0.02 seconds.
+    Coordinate variables and variable attributes set after  0.01 seconds.
+    netCDF global attributes set after  0.01 seconds.
 Step 2 initiated...
     The GEOGRID File resolution is 1000.0sm
     The High-resolution dataset will be 100.0m
@@ -85,7 +85,7 @@ Step 4 initiated...
         Done writing NC file to disk.
     Routing table created without error.
     Adding parameters from Route_Link.nc to streams.shp.
-    Wrote paramters to feature class: 0.21 seconds.
+    Wrote paramters to feature class: 0.24 seconds.
     Process: LINKID written to output netCDF.
     Process: LAKEGRID written to output netCDF.
     Process: CHANNELGRID written to output netCDF.
@@ -94,10 +94,10 @@ Beginning to build 2D groundwater basin inputs
   Building groundwater inputs using FullDom LINKID local basins
     LINKID exists in FullDom file.
     Stream to features step complete.
-Finished building groundwater basin grids in 2.08 seconds
+Finished building groundwater basin grids in 2.12 seconds
 Beginning to build groundwater inputs
     Found (283,) basins in the watershed grid
-    Found 268 basins (potentially including nodata values) in the file after resampling to the coarse grid.
+    Found 267 basins (potentially including nodata values) in the file after resampling to the coarse grid.
 Creating CF-netCDF File.
     Esri PE String: PROJCS["Sphere_Mercator",GEOGCS["GCS_Sphere",DATUM["D_Sphere",SPHEROID["Sphere",6370000.0,0.0]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Mercator"],PARAMETER["False_Easting",0.0],PARAMETER["False_Northing",0.0],PARAMETER["Central_Meridian",-66.6389],PARAMETER["Standard_Parallel_1",18.0],UNIT["Meter",1.0]]
     Map Projection of input raster : mercator
@@ -109,9 +109,9 @@ Creating CF-netCDF File.
     NC dimensions: 29, 44
     GWBUCKS array dimensions: 29, 44
     Process: C:\Users\Abtahi.Chowdhury49\Desktop\abtahi_arcgis\scratchdir\GWBASINS.nc completed without error
-    Finished building groundwater grid file in 0.03 seconds
+    Finished building groundwater grid file in 0.04 seconds
     Calculating size and ID parameters for basin polygons.
     Created output bucket parameter table (.nc): C:\Users\Abtahi.Chowdhury49\Desktop\abtahi_arcgis\scratchdir\GWBUCKPARM.nc.
   Finished building groundwater bucket parameter table in 0.01 seconds.
-Finished building groundwater parameter files in 10.23 seconds
-Completed without error in 60.5260000229 seconds.
+Finished building groundwater parameter files in 10.47 seconds
+Completed without error in 59.6840000153 seconds.
