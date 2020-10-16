@@ -82,13 +82,14 @@ def data_grab(nc_folder,nc_indx):
 
     os.chdir('../')
     # print test coordinates
+    '''
     f = open("poop2.txt","a")
     for i in range(0,5424):
         for j in range(0,5424):
             print(f"i,j = {i},{j}  ::  {lat[i,j]} N, {abs(lon[i,j])} W", file=f )
     
     f.close()
-
+    '''
 
     print('{} N, {} W'.format(lat[418,1849],abs(lon[418,1849])))
 
@@ -104,12 +105,43 @@ data,data_units,data_time_grab,data_long_name,var_name = data_grab(nc_folder,fil
 # main data grab from function above
 
 data_bounds = np.where(data.data!=65535)
+#Returns the rows and cols (x,y) in a tuple where the cond is satisfied
+# Each element in the tuple is itself a tuple of an array of vals and the dtype
+goodData2 = np.extract(data.data!=65535,data)
+print(f"Data Bounds = {data_bounds}")
+print(f"Good Data = {goodData2}")
 bbox = [np.min(lon[data_bounds]),
         np.min(lat[data_bounds]),
         np.max(lon[data_bounds]),
         np.max(lat[data_bounds])] # set bounds for plotting
 
-bbox = [-65,17,-68,19]
+dimLimit = 5424
+goodData = np.full((dimLimit,dimLimit), np.inf)
+xBounds = data_bounds[0]
+yBounds = data_bounds[1]
+
+print(f"xBounds Vals = {xBounds}")
+print(f"min, max in xBounds = {np.min(xBounds), np.max(xBounds)}")
+print(f"Length of xBounds = {len(xBounds)}")
+print(f"yBounds Vals = {yBounds}")
+print(f"min, max in yBounds = {np.min(yBounds), np.max(yBounds)}")
+print(f"Length of yBounds = {len(yBounds)}")
+print(f"Size of size of  data is {data.shape}")
+print(f"Size of size of  goodData is {goodData.shape}")
+
+exit()
+
+# TODO: Access at [xBounds[i]][yBounds[i]]
+for x in xBounds:
+    iterCount = 0
+    for y in yBounds:
+        goodData[x][y] = data[x][y] 
+        iterCount +=1
+        # print(f"x,y, iter = ({x},{y}) {iterCount}")
+
+
+print("Post Loop")
+'''
 print(f"Size of size of lon is {lon.shape}")
 print(f"Lon is == {lon.data}")
 
@@ -122,8 +154,8 @@ print(f"Type of Data is {type(data)}" )
 
 #print(f"Shape of data_bounds is {data_bounds.shape}")
 print(f"Data is == {data_bounds}")
-
-exit(1)
+'''
+exit()
 # figure routine for visualization
 fig = plt.figure(figsize=(9,4),dpi=200)
 
@@ -148,4 +180,4 @@ plt.title(' on '.format(data_long_name,data_time_grab))
 plt.tight_layout()
 
 plt.savefig('goes_16_data_demo.png',dpi=200,facecolor=[252/255,252/255,252/255]) # uncomment to save figure
-#plt.show()
+plt.show()
