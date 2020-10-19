@@ -109,38 +109,52 @@ data_bounds = np.where(data.data!=65535)
 # Each element in the tuple is itself a tuple of an array of vals and the dtype
 goodData2 = np.extract(data.data!=65535,data)
 print(f"Data Bounds = {data_bounds}")
-print(f"Good Data = {goodData2}")
 bbox = [np.min(lon[data_bounds]),
         np.min(lat[data_bounds]),
         np.max(lon[data_bounds]),
         np.max(lat[data_bounds])] # set bounds for plotting
-
+# bbox = [-65,17,-68,19]
 dimLimit = 5424
 goodData = np.full((dimLimit,dimLimit), np.inf)
 xBounds = data_bounds[0]
 yBounds = data_bounds[1]
 
+val = (lon[data_bounds])
+
 print(f"xBounds Vals = {xBounds}")
-print(f"min, max in xBounds = {np.min(xBounds), np.max(xBounds)}")
-print(f"Length of xBounds = {len(xBounds)}")
-print(f"yBounds Vals = {yBounds}")
-print(f"min, max in yBounds = {np.min(yBounds), np.max(yBounds)}")
-print(f"Length of yBounds = {len(yBounds)}")
-print(f"Size of size of  data is {data.shape}")
-print(f"Size of size of  goodData is {goodData.shape}")
+print(f"lat = {lat.data}")
+print(f"dataShape = {data.shape}")
+print(f"data = {data.data}")
 
+
+#NOTE: Mapping x |--> data_bounds[x] = i |--> lat[i]
+# Get the x,y for lat
+xForLats = []
+yForLats = []
+for i in range(0,len(lat)):
+    #print(f"xBounds[i] = {xBounds[i]}")
+    #print(f" lat[xBounds[i]]: {lat.data[xBounds[i]]}")
+    latVal = lat.data[xBounds[i]]
+    lonVal = lon.data[xBounds[i]]
+    print(f"latval = {latVal}")
+    if latVal > 17  and latVal < 19:
+        xForLats.append(i)
+    if lonVal > -68 and lonVal < -65:
+        yForLats.append(i)
+
+print(f"xForLats = {xForLats}")
+print(f"yForLats = {yForLats}")
 exit()
-
 # TODO: Access at [xBounds[i]][yBounds[i]]
-for x in xBounds:
-    iterCount = 0
-    for y in yBounds:
-        goodData[x][y] = data[x][y] 
-        iterCount +=1
-        # print(f"x,y, iter = ({x},{y}) {iterCount}")
+for i in range(0,len(xBounds)):
+    x = xBounds[i]
+    y = yBounds[i]
+    goodData[x][y] = data[x][y] 
 
+    # print(f"x,y, iter = ({x},{y}) {iterCount}")
 
-print("Post Loop")
+print(f"Post Loop, iterCount = {iterCount}")
+print(goodData)
 '''
 print(f"Size of size of lon is {lon.shape}")
 print(f"Lon is == {lon.data}")
