@@ -55,6 +55,16 @@ def lat_lon_reproj(nc_folder):
     lon = (lambda_0 - np.arctan(s_y/(H-s_x)))*(180.0/np.pi)
 
     os.chdir('../')
+    print("poop")
+    print('{} N, {} W'.format(lat[318,1849],abs(lon[318,1849])))
+    with open('realpoop.txt','a+') as f:
+        for i in range(0,5424):
+            for j in range(0,5424):
+                x = lat[i,j]
+                y = abs(lon[i,j])
+                
+                if (x > 17  and x < 19) and (y > -68 and y < -65):
+                    print(f"i, j, x, y, data  = ( {i}, {j}, {x}, {y}, {data.data[i,j]} )", file=f)
 
     return lon,lat
 
@@ -105,7 +115,7 @@ data,data_units,data_time_grab,data_long_name,var_name = data_grab(nc_folder,fil
 # main data grab from function above
 
 data_bounds = np.where(data.data!=65535)
-#Returns the rows and cols (x,y) in a tuple where the cond is satisfied
+# Returns the rows and cols (x,y) in a tuple where the cond is satisfied
 # Each element in the tuple is itself a tuple of an array of vals and the dtype
 goodData2 = np.extract(data.data!=65535,data)
 print(f"Data Bounds = {data_bounds}")
@@ -114,6 +124,7 @@ bbox = [np.min(lon[data_bounds]),
         np.max(lon[data_bounds]),
         np.max(lat[data_bounds])] # set bounds for plotting
 # bbox = [-65,17,-68,19]
+
 dimLimit = 5424
 goodData = np.full((dimLimit,dimLimit), np.inf)
 xBounds = data_bounds[0]
@@ -122,24 +133,36 @@ yBounds = data_bounds[1]
 val = (lon[data_bounds])
 
 print(f"xBounds Vals = {xBounds}")
+print(f"xBounds size = {len(xBounds)}")
 print(f"lat = {lat.data}")
-print(f"dataShape = {data.shape}")
-print(f"data = {data.data}")
+print(f"lat.shape = {lat.data.shape}")
+print(f"lon = {lon.data}")
+print(f"lon.shape = {lon.data.shape}")
+print(f"dataShape[x] = {data.data[0][0].shape}")
+print(f"data[0] = {data.data[0][0]}")
 
-
-#NOTE: Mapping x |--> data_bounds[x] = i |--> lat[i]
+'''
+for i in range(0,dimLimit):
+    xi = xBounds[i]
+    yi = yBounds[i]
+    val = data.data[ xBounds[i] ][ yBounds[i] ]
+    print(f"val, xi, yi = {val}, {xi}, {yi}")
+'''
+exit()
+# TODO: Use xBounds and yBounds to get a lat long
 # Get the x,y for lat
 xForLats = []
 yForLats = []
 for i in range(0,len(lat)):
     #print(f"xBounds[i] = {xBounds[i]}")
     #print(f" lat[xBounds[i]]: {lat.data[xBounds[i]]}")
-    latVal = lat.data[xBounds[i]]
-    lonVal = lon.data[xBounds[i]]
+    latVal = lat.data[ xBounds[i] ]
+    lonVal = lon.data[ xBounds[i] ]
     print(f"latval = {latVal}")
-    if latVal > 17  and latVal < 19:
+    
+    if latVal[0] > 17  and latVal[0] < 19:
         xForLats.append(i)
-    if lonVal > -68 and lonVal < -65:
+    if lonVal[0] > -68 and lonVal[0] < -65:
         yForLats.append(i)
 
 print(f"xForLats = {xForLats}")
