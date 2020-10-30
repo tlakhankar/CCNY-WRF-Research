@@ -55,6 +55,7 @@ def lat_lon_reproj(nc_folder):
     lon = (lambda_0 - np.arctan(s_y/(H-s_x)))*(180.0/np.pi)
 
     os.chdir('../')
+    '''
     print("poop")
     print('{} N, {} W'.format(lat[318,1849],abs(lon[318,1849])))
     with open('realpoop.txt','a+') as f:
@@ -65,7 +66,7 @@ def lat_lon_reproj(nc_folder):
                 
                 if (x > 17  and x < 19) and (y > -68 and y < -65):
                     print(f"i, j, x, y, data  = ( {i}, {j}, {x}, {y}, {data.data[i,j]} )", file=f)
-
+    '''
     return lon,lat
 
 def data_grab(nc_folder,nc_indx):
@@ -123,8 +124,8 @@ bbox = [np.min(lon[data_bounds]),
         np.min(lat[data_bounds]),
         np.max(lon[data_bounds]),
         np.max(lat[data_bounds])] # set bounds for plotting
-# bbox = [-65,17,-68,19]
-
+bbox = [-65,17,-68,19]
+'''
 dimLimit = 5424
 goodData = np.full((dimLimit,dimLimit), np.inf)
 xBounds = data_bounds[0]
@@ -142,13 +143,15 @@ print(f"dataShape[x] = {data.data[0][0].shape}")
 print(f"data[0] = {data.data[0][0]}")
 
 '''
+'''
 for i in range(0,dimLimit):
     xi = xBounds[i]
     yi = yBounds[i]
     val = data.data[ xBounds[i] ][ yBounds[i] ]
     print(f"val, xi, yi = {val}, {xi}, {yi}")
 '''
-exit()
+'''
+
 # TODO: Use xBounds and yBounds to get a lat long
 # Get the x,y for lat
 xForLats = []
@@ -167,7 +170,7 @@ for i in range(0,len(lat)):
 
 print(f"xForLats = {xForLats}")
 print(f"yForLats = {yForLats}")
-exit()
+
 # TODO: Access at [xBounds[i]][yBounds[i]]
 for i in range(0,len(xBounds)):
     x = xBounds[i]
@@ -193,6 +196,7 @@ print(f"Type of Data is {type(data)}" )
 print(f"Data is == {data_bounds}")
 '''
 exit()
+'''
 # figure routine for visualization
 fig = plt.figure(figsize=(9,4),dpi=200)
 
