@@ -56,9 +56,9 @@ def lat_lon_reproj(nc_folder):
 
     os.chdir('../')
     '''
-    print("poop")
+    print("target")
     print('{} N, {} W'.format(lat[318,1849],abs(lon[318,1849])))
-    with open('realpoop.txt','a+') as f:
+    with open('target.txt','a+') as f:
         for i in range(0,5424):
             for j in range(0,5424):
                 x = lat[i,j]
@@ -94,7 +94,7 @@ def data_grab(nc_folder,nc_indx):
     os.chdir('../')
     # print test coordinates
     '''
-    f = open("poop2.txt","a")
+    f = open("target.txt","a")
     for i in range(0,5424):
         for j in range(0,5424):
             print(f"i,j = {i},{j}  ::  {lat[i,j]} N, {abs(lon[i,j])} W", file=f )
@@ -124,7 +124,7 @@ bbox = [np.min(lon[data_bounds]),
         np.min(lat[data_bounds]),
         np.max(lon[data_bounds]),
         np.max(lat[data_bounds])] # set bounds for plotting
-bbox = [-65,17,-68,19]
+bbox = [-65,17,-68,19] # NOTE: Resets the bounds for plotting in LAT/LONG values
 '''
 dimLimit = 5424
 goodData = np.full((dimLimit,dimLimit), np.inf)
