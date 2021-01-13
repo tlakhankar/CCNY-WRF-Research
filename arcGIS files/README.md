@@ -1,6 +1,6 @@
 # Creating domain files for wrf-hydro using ArcGIS
 
-1. Use the WPS installation on the middle computer in room ST183 to create a geogrid file called geo_em.d01.nc file. To do that login into the ubuntu install on the computer and navigate to the WPS folder and locate a file called namelist.wps. [Here](../namelist.wps) is an example namelist.wps In that file there are a few variables that need to be changed. After updating these variables, run "geogrid,exe" to create the geogrid file.
+1. Use the WPS installation on either the middle computer or the computer at the far end in room ST183 to create a geogrid file called geo_em.d01.nc file. To do that login into the ubuntu install on the computer and navigate to the WPS folder located in the ARIK_NO_TOUCHY folder and locate a file called namelist.wps. [Here](../namelist.wps) is an example namelist.wps In that file there are a few variables that need to be changed. After updating these variables, run "geogrid,exe" to create the geogrid file.
 	- start_date is the start date of the simulation
 	- end_date is the end date of the simulation
 	- interval_seconds is the interval time of the forcing data (for gfsanl its 21600)
