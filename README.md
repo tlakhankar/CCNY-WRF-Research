@@ -2,21 +2,6 @@
 
 This will be used to keep track of our issues for research under Dr. Tarendra Lakhankar at CCNY.
 
-## May 22nd Sprint Objectives
-
-- 2 Watersheds Discharge Graphs
-   - Watershed E
-   - Watershed F
-- Compare discharge from precip
-   - Satallite Precip comparison perferbly GOES-R
-
-## Current Team:
-
-- Engela Sthapit
-- Anthony Bravo
-- Arik Idrisy
-- Abtahi Chowdry
-- Rehman Arshad
 
 ## Overview
 This Readme contains an explanation of how to use this GitHub repository and operates as a table of contents for all the documentation written for this project.
@@ -27,9 +12,9 @@ These issues form the build blocks for _Projects_. Projects are a way to organiz
 
 ## Important File Paths
 Location of this repo clones on Anthony's Office Computer
-`
+```
  /home/engela/Desktop/ARIK_NO_TOUCHY/CCNY_WRF_RESEARCH
-`
+```
 
 ## [Docker](https://github.com/WK-M/CCNY-WRF-Research/wiki/Docker)
 
@@ -44,5 +29,18 @@ More about Docker can be found [here](https://docs.docker.com/get-started/)
 
 Regridding is the process of interpolating from one grid resolution to a different grid resolution. With regridding, it utilizes the geo_em.dXX.nc file made in Step 1, and regrids the data to the specified domain. Where XX is a number such as 00, 01, etc.  NCAR provides regridding scripts that are available to the public and downloadable on their [website](https://ral.ucar.edu/projects/wrf_hydro/regridding-scripts). They provide regridding scripts for 6 different forcing datasets: NLDAS, GLDAS, HRRR, MRMS, GFS, and RAP.
 
+## Directories
+- `/geogrid_domains`
+   - Contains the input and output for each domain to be simulated in WRF-Hydro.
+   - The directory name provides the watershed letter designation used for the project, and the USGS gage number in that watershed
+      - `WATERSHEF_<NAME>_Site_No_<USGS_SITE#>`
+   - The `.nc` files required for the `/DOMAIN` and `/FORCING` directories for the sim can be found here.
+   - The NWS/USGS Gauge data for the watershed location can also be found here
+   - A MAP provided by USGS for the gage and its location is also provided
 
+- `/R_Script`
+   - Contians the R script provided by NCAR to create the wrf_input files
+   - Refer to the `README.txt` in these folders
 
+- `/ref`
+   - Old reference files, has some notes on the namelist file settings

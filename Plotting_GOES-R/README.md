@@ -9,7 +9,7 @@ The closest we've been able to get is to restrict the lat long that is being plo
 
 # Directories/Files
 
-- /dischargeInput
+- `/dischargeInput`
     - Plot the USGS gage discharge data
     - discharge.py - Python Script that will generate plot
         - Requires the NumPy, Pandas, and MatPlotLib Python extensions
@@ -19,16 +19,16 @@ The closest we've been able to get is to restrict the lat long that is being plo
     - frxst_ots_out.csv
         - Output files from WRF-HYDRO Simulations
 
-- /GOES_files
+- `/GOES_files`
     - Directory to store the input `*.nc` files for plotting
     - The GOES-R files themselves are NOT stored on GitHub due to their size, they can be found on the external hard drives.
 
-- usingPyForGOESR.py
+- `usingPyForGOESR.py`
     - This file is based of the tutorials found [here](https://makersportal.com/blog/2019/7/8/satellite-imagery-analysis-in-python-part-i-goes-16-data-netcdf-files-and-the-basemap-toolkit) and [here](https://makersportal.com/blog/2018/11/25/goes-r-satellite-latitude-and-longitude-grid-projection-algorithm)
     - Input : GOES-R .nc files from `/GOES_files`
     - Desired Output: A plot of the RRQPE (Rainfall) data at a given lattitude-longitude coordinate.
 
-- usingPandasGOESR.py
+- `usingPandasGOESR.py`
     - Same goal as `usingPyForGOESR.py` but an attempt from scratch using Pandas.
 
 -nctest.m
