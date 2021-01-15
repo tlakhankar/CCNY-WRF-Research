@@ -30,6 +30,10 @@ More about Docker can be found [here](https://docs.docker.com/get-started/)
 Regridding is the process of interpolating from one grid resolution to a different grid resolution. With regridding, it utilizes the geo_em.dXX.nc file made in Step 1, and regrids the data to the specified domain. Where XX is a number such as 00, 01, etc.  NCAR provides regridding scripts that are available to the public and downloadable on their [website](https://ral.ucar.edu/projects/wrf_hydro/regridding-scripts). They provide regridding scripts for 6 different forcing datasets: NLDAS, GLDAS, HRRR, MRMS, GFS, and RAP.
 
 ## Directories
+- `'Plotting_GOES-R`
+   - Files for plotting the GOES_R files and comparing them to others, refer to the `README` in the directory
+   - Scripts for plotting the Discharge data found here
+      - `/Plotting_GOES-R/dischargeInput`
 - `/geogrid_domains`
    - Contains the input and output for each domain to be simulated in WRF-Hydro.
    - The directory name provides the watershed letter designation used for the project, and the USGS gage number in that watershed
